@@ -18,6 +18,10 @@ I've also added the convenience methods `JSONObjectWithCommentedContentsOfURL:op
 
 Finally `stringWithJSONObject:options:error:` is a convenience method around `dataWithJSONObject:options:error:` if you need an NSString instead of NSData.
 
+## ARC Support
+
+If you are including NSJSONSerialization+Comments in a project that has Automatic Reference Counting (ARC) enabled, you will need to set the `-fno-objc-arc` compiler flag. To do this in Xcode, go to your active target and select the "Build Phases" tab and open the "Compile Sources" section. In the "Compiler Flags" column, set `-fno-objc-arc` for `NSJSONSerialization+Comments.m`.
+
 # License
 
 Code in this repository is licensed under the MIT license (see the LICENSE file).
