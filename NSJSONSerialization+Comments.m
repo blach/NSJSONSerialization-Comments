@@ -289,7 +289,7 @@ static inline void skipUTF8Character(UTF8Char **source) { *source += EncLen_UTF8
 + (id)JSONObjectWithCommentedContentsOfFile:(NSString *)path
                                     options:(NSJSONReadingOptions)opt
                                       error:(NSError **)error {
-    // load data from URL
+    // load data from file
     NSData *data = [NSData dataWithContentsOfFile:path options:NSDataReadingUncached error:error];
 
     return [self JSONObjectWithCommentedData:data options:opt error:error];
