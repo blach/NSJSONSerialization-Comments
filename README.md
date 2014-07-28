@@ -10,6 +10,8 @@ You can use this category's `JSONObjectWithCommentedData:options:error:` method 
 id object = [NSJSONSerialization JSONObjectWithCommentedData:data options:0 error:&error];
 ```
 
+It strips single line and multi-line comments as well as whitespace before it hands over the data to NSJSONSerialization.
+
 The code works directly on UTF-8 data without converting it to an NSString, but also detects UTF-16 and UTF-32 byte order marks (BOM). If a non-UTF-8 BOM is detected, it converts the data to UTF-8. The most efficient encoding to use for parsing is UTF-8.
 
 I've also added the convenience methods `JSONObjectWithCommentedContentsOfURL:options:error:` and `JSONObjectWithCommentedContentsOfFile:options:error:` to load JSON directly from a file or url. 
