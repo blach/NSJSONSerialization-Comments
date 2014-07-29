@@ -265,6 +265,7 @@ static inline void skipUTF8Character(UTF8Char **source) { *source += EncLen_UTF8
                                             @"detected encoding. The data may be corrupt."
                                                 }];
                 }
+				return nil;
             } else {
                 data = [string dataUsingEncoding:NSUTF8StringEncoding];
                 [string release];
