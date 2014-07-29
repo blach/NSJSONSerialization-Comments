@@ -67,8 +67,9 @@ static inline void skipUTF8Character(UTF8Char **source) { *source += EncLen_UTF8
             originalStringCurrent++;
         } else if (currentChar == '"') {
             // we found a string! -> handle it
-            copyUTF8CharacterAndAdvancePointers(&originalStringCurrent, &modifiedStringCurrent);
-
+            *modifiedStringCurrent++ = currentChar;
+            originalStringCurrent++;
+					
             UTF8Char lastChar = 0;
 
             while (originalStringCurrent < originalStringEnd) {
